@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button, makeStyles } from '@material-ui/core';
 
@@ -25,7 +25,7 @@ export default function Nav() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" style={{ background: 'black' }}> 
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         <Button color="inherit" component={RouterLink} to="/">
@@ -35,7 +35,7 @@ export default function Nav() {
                     <Button color="inherit" component={RouterLink} to="/">
                         Home
                     </Button>
-                    <Button color="inherit" component={RouterLink} to="/create">
+                    <Button color="inherit" component={RouterLink} to="/profile">
                         Create Note
                     </Button>
                     {user ? (

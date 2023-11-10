@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { signInApi } from '../api/Api';
+import Nav from '../components/nav';
 
 function Copyright(props) {
   return (
@@ -63,7 +64,7 @@ export default function SignIn() {
       }).then(res=>{
         console.log(res);
         localStorage.setItem('auth', JSON.stringify(res.data));
-        navigate('/')
+        navigate('/profile')
       }).catch(error => {
         console.log(error);
         toast.error(error.response.data);
@@ -75,6 +76,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <Nav/>
       <Container 
       
       component="main" maxWidth="xs">

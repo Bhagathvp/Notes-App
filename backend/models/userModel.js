@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema({
     },
     notes: [
         {
-            Heading: {
+            heading: {
                 type : String,
                 required : true
             },

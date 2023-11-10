@@ -13,6 +13,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import toast from 'react-hot-toast';
 
 import { signUpApi } from '../api/Api';
+import Nav from '../components/nav';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -41,7 +43,8 @@ const defaultTheme = createTheme({
   
 
 export default function SignUp() {
-
+  const navigate = useNavigate();
+  
  const handleSubmit = (event) => {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
@@ -68,6 +71,7 @@ export default function SignUp() {
       ).then(res=>{
         console.log(res);
         toast.success(res.data);
+        navigate('/login')
       }).catch(error=>{
         console.log(error);
         toast.error(error.response.data)
@@ -80,6 +84,7 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <Nav/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box

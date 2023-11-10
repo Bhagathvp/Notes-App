@@ -7,7 +7,7 @@
     "start": "node app.js",
     "app": "nodemon app.js",
     "client": "cd .. && npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run app\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
